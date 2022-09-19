@@ -1,0 +1,62 @@
+// 動きのきっかけとなるアニメーションの名前を定義
+function fadeAnime(){
+
+  // ふわっ
+  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+    }
+    });
+	
+	$('.inner-b').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fade2');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fade2');// 画面外に出たらfadeUpというクラス名を外す
+    }
+    });
+	
+	$('.fadesusumetrig').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadesusume');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadesusume');// 画面外に出たらfadeUpというクラス名を外す
+    }
+    });
+	
+	$('.inner-o').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeooshika');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadeooshika');// 画面外に出たらfadeUpというクラス名を外す
+    }
+    });
+	
+	
+}
+
+// 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function(){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+// JavaScript Document
+

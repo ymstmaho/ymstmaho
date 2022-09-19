@@ -1,0 +1,1065 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,p,h1,h2,h3,ul,li{
+	margin: 0;
+	padding:0;
+	overflow-x: hidden;
+}
+img{
+	vertical-align: top;
+}
+body{
+	
+	margin: 0 auto;
+	font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
+	
+
+
+}
+
+h2{
+	color:#4d3232;
+	background-color: rgba(255,255,255,0.50);
+	display: flex;
+	align-items: center; /* 垂直中心 */
+	justify-content: center; /* 水平中心 */
+	border-color: #4d3232;
+	text-align: center;
+	font-family: Meiryo;
+	font-weight: bold;
+	z-index: 200;
+}
+h2:before, h2:after {
+  border-top: 3px solid;
+
+  content: "";
+  width: 3em; /* 線の長さ */
+}
+h2:before {
+  margin-right: 1em; /* 文字の右隣 */
+}
+h2:after {
+  margin-left: 1em; /* 文字の左隣 */
+}
+
+
+.logo {
+	background-color: rgba(255,255,255,0.80);
+	position: absolute;
+	
+}
+	
+
+.tot{
+	position:relative;
+}
+.top{
+	position: relative;
+}
+
+
+.slidetop{
+	width: 100vw;
+	height:100vh;
+	background-position:center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+	
+
+a{
+	color:#4d3232;
+	text-decoration: none;
+	font-weight: bold;
+	display:flex;
+}
+
+#nav a:hover{
+	color:rgba(77,50,50,0.60);
+}
+
+
+#nav{
+	position: absolute;
+	
+	top: 0;
+	right: 30px;
+	
+	width: 20%;
+	height:100vh;
+	background: rgba(255,255,255,0.50);
+	/*０.7秒かけてナビメニューがスライドする*/
+	transition: .7s;
+}
+#nav ul{
+    padding-top: 30px;
+	box-sizing: border-box;
+	
+}
+#nav ul li{
+   
+    font-size: 1.3em;
+	list-style-type: none;
+	box-sizing: border-box;
+	
+	
+}
+#nav a{
+    display: block;
+    text-decoration: none;
+  
+    margin: 0 15px;
+    padding: 10px;
+    transition: .5s;
+	color:#4d3232;
+
+	font-weight: bold;}
+	
+#hamburger {
+    /*display: block;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    width: 50px;
+    height: 44px;
+    cursor: pointer;
+	transition: 1s;*/
+width:50px;
+	height: 50px;
+	margin-left: auto;
+	position: relative;
+}
+
+/*#hamburger span{
+	width: 30px;
+	height: 10px;
+	display: block;
+	background-color:rgba(255,255,255,0.50);
+	position: absolute;
+	left:50px;
+	z-index: 555;
+}*/
+	
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 20px;
+  top   : 20px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #FFFFFF;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* スマホメニューを開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  background :rgba(255,255,255,0.50);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  background :rgba(255,255,255,0.50);
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+/* メニュー背景　*/
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #fff;
+  background: rgba(255,255,255,0.50);
+  text-align: center;
+  width:100%;
+  transform: translateX(100%);
+  transition: all 0.6s;
+}
+
+nav.globalMenuSp ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+  background :rgba(255,255,255,0.80);
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: rgba(77,50,50,1.00);
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* クリックでjQueryで追加・削除 */
+nav.globalMenuSp.active {
+  opacity: 100;
+  display: block;
+   transform: translateX(0%);
+}
+
+
+/*.inner_line {
+    display: block;
+    position: absolute;
+    
+    width: 50px;
+    height: 3px;
+    background-color: #4d3232;
+
+    transition: 1s;
+	border-radius: 4px;}
+#line1 {
+    top: 0;
+}
+#line2 {
+    top: 20px;
+}
+#line3 {
+    bottom: 0px;
+}
+.in{
+    transform: translateX(100%);
+  }
+  .line_1,.line_2,.line_3{
+    background: #000000;
+  }
+  .line_1 {
+    /*-45度回転させる*/
+/*	   transform: translateY(20px) ;
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  /*.line_2 {
+    opacity: 0;
+  }
+  .line_3 {
+    /*45度回転させる*/
+	 /*   transform: translateY(-20px) ;
+    transform: rotate(45deg);
+    bottom: 0;
+  }
+*/
+/*
+ul{	
+	width: 90%;
+	list-style-type: none;
+	  display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    height:100px;
+}　
+li{
+	display: block;
+	margin: 0 10px
+}
+	*/
+
+	.inner1 {
+	background-image: url("img/green.jpg");
+	width: 100vw;
+	height:200vh;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+	color: #4d3232;
+		
+	}
+
+.fadeUp{
+animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity:0;
+	background-color: rgba(77,50,50,0.70);
+	text-align: center;
+	box-sizing: border-box;
+	
+}
+.box.fadeUpTrigger{
+	background-color: rgba(77,50,50,0.70);
+	color: #FFFFFF;
+	margin-top: 30px;
+	width: 550px;
+	height: 350px;
+	font-size: 1.5em;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	font-weight: bold;
+		
+	}
+	
+		
+
+	
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+
+
+/*.slidealbum{
+	
+	width: 100vw;
+	height: 100vh;
+	background-position:center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	
+	}
+
+*/
+
+.album{
+	background-color: rgba(212,255,244,1.00);	
+	width: 100vw;
+	height: auto;
+	background-position:center top;
+	background-size: cover;
+}
+.inner-a{
+	
+	width: 100vw;
+	height: auto;
+	background-position:center top;
+	background-size: cover;
+}
+
+
+.cheki{
+	width: 100%;
+	height:auto;
+	display: flex;
+	justify-content:space-around;
+	flex-wrap: wrap;
+
+}
+
+.usagi{
+	
+	transform: rotate(-10deg);
+	object-fit: contain;
+}
+
+.red{
+	transform: rotate(4deg);
+	object-fit: contain;
+	/*z-index: 2;*/
+}
+
+.kitsune{
+	transform: rotate(9deg);
+	object-fit: contain;
+	/*z-index: 2;*/
+}
+
+.milky{
+	transform: rotate(-12deg);
+	object-fit: contain;
+	/*z-index: 3;*/
+}
+
+.tentgun{
+	background-image: url(img/picnic.jpg);
+	width: 100vw;
+	height: 150vh;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+	color: #4d3232;
+	}
+
+
+.fadesusume{
+animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity:0;
+	background-color: rgba(77,50,50,0.70);
+	text-align: center;
+	box-sizing: border-box;
+	align-items: center;
+	
+}
+.box.fadesusumetrig{
+	background-color: rgba(77,50,50,0.70);
+	color: #FFFFFF;
+	margin-top: 30px;
+	width: 550px;
+	height: 450px;
+	font-size: 1.5em;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-weight: bold;
+	text-align: center;	
+	}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+.annai{
+	background-color: rgba(255,255,255,0.80);
+	font-size: 1.5em;
+	
+}
+
+.kin{
+	font-weight: bold;
+}
+
+
+.space{
+	background-image: url(img/fire.jpg);	
+	width: 100vw;
+	height:auto;
+	background-position:center center;
+	background-size: cover;
+	}
+
+.space h3{
+	background-color: rgba(255,255,255,0.50);
+	display: flex;
+	align-items: center; /* 垂直中心 */
+	justify-content: center; /* 水平中心 */
+}
+
+.space .icon{
+	display: flex;
+/*animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity:0;
+	*/
+	text-align: center;
+	box-sizing: border-box;
+	align-items: flex-start;
+	width:90%;
+	
+	
+	justify-content:space-around;
+	margin:0 auto;
+	
+}
+
+.icon span{
+	background-color: rgba(77,50,50,0.70);
+	
+}
+.icon img{
+	margin: 50px 0;
+}
+
+/*.moji{
+	display: flex;
+	background-color: rgba(77,50,50,0.70);
+	background-position: top top;
+	align-items:flex-start;
+	
+	color:#ffffff;
+	text-align: center;
+	
+}
+*/
+.ohuro{
+	
+	color: #FFFFFF;
+	
+	align-items:flex-start;
+	
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;	
+	margin-right: 3em;
+	
+}
+
+.shizuka{
+	
+	color: #FFFFFF;
+	
+	
+	font-size: 1.5em;
+	
+	font-weight: bold;
+	text-align: center;	
+	margin-right: 3em;
+}
+
+.gomi{
+	
+	color: #FFFFFF;
+	
+	
+	font-size: 1.5em;
+	
+	font-weight: bold;
+	text-align: center;	
+	margin-right: 3em;
+}
+/*
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+*/
+
+.blueberry{
+	background-image: url(img/blueberry.png);
+	width: 100vw;
+	height: 150vh;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+}
+/*
+.inner3 {
+	background-image: url(img/ooshikamura.png);
+	width: 100vw;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+	color: #4d3232;
+		
+	}
+*/
+.fade2{
+animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity:0;
+	background-color: rgba(77,50,50,0.70);
+	text-align: center;
+	box-sizing: border-box;
+	align-items: center;
+	
+}
+.box.inner-b{
+	background-color: rgba(77,50,50,0.70);
+	color: #FFFFFF;
+	margin-top: 30px;
+	width: 550px;
+	height: 400px;
+	font-size: 1.5em;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-weight: bold;
+	text-align: center;
+	
+		
+	}
+
+		
+.box.inner-b a{
+	color:#7dd40d;
+	text-align:center;
+	
+}
+
+.box.inner-b a:hover{
+	color:rgba(113,17,231,0.50);
+}
+
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+
+
+.morino{
+	width: 100%;
+	background-image: url(img/bg-hushtag.png);	
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+	padding-bottom: 50px;
+}
+.sns{
+	width:90%;
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+	margin:0 auto;
+	}
+
+.sns p{
+	padding:50px 0; 
+}
+
+.check{
+	text-align: center;
+	color: #7111e7;
+	font-size: 2em;
+	padding-top: 50px;
+	font-weight: bold;
+	;
+	background-image: url("img/bigtape-green.png");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	
+}
+
+
+.ooshika{
+	background-image: url(img/redleaf.jpg);	
+	width: 100vw;
+	height:100vh;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size: cover;	
+}
+
+.fadeooshika{
+animation-name:fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity:0;
+	background-color: rgba(77,50,50,0.70);
+	text-align: center;
+	box-sizing: border-box;
+	align-items: center;
+	
+}
+.box.inner-o{
+	background-color: rgba(77,50,50,0.70);
+	color: #FFFFFF;
+	margin-top: 30px;
+	width: 550px;
+	height: 370px;
+	font-size: 1.5em;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-weight: bold;
+	text-align: center;	
+	}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+	
+
+
+.access{
+	width: 100%;
+	height:100%;
+	background-color: #ebddc6;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 100px;
+	padding-bottom: 50px;
+}
+
+.chizu{
+	width: 100%;
+	height:60%;
+	margin-top:50px;
+	
+	
+}
+
+footer{
+	width: 100vw;
+	
+	text-align: center;
+	justify-content: center;
+	color: #4d3232;
+	
+}
+.moji{
+	font-weight: bold;
+	margin-top: 150px;
+	margin-left: 50px;
+	text-align: left;
+}
+
+.footlogo{
+	margin-right: 50px;
+}
+.inner-f{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+
+
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	transition:all 0.3s;
+	opacity: 1;
+}
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 15px;
+	bottom:50px;
+	z-index: 8999;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(200px);
+	
+	}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(220px);
+  }
+}
+
+
+
+
+/*
+	
+	.top{
+		width: 100%;
+	}
+	.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #3584bb;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+	
+	
+	#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+	
+#menu-btn-check {
+    display: none;
+}
+
+#menu-btn-check {
+    display: none;
+}
+	
+	.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #3584bb;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+	
+	.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+/*
+    z-index: 80;
+    background-color: #3584bb;
+    transition: all 0.5s;/*アニメーション設定*/
+/*
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+/*
+}
+*/
+
+
+@media screen and (max-width:768px)
+{
+	.box.fadeUpTrigger,.box.inner-o,.box.inner-b,.box.fadesusumetrig
+	{
+	width: 50%;
+	height:auto;
+	font-size: 1em;
+	padding: 1em;
+	font-weight: bold;
+	text-align: left;
+		
+	}
+	
+	
+	.inner-f{
+		display:inline-block;
+		justify-content: center;
+		text-align:center;
+		margin-bottom: 1em;
+	}
+	.footlogo{
+		justify-content: center;
+		display:block;
+		width: 350px;
+		height: auto;
+		margin: 0;
+	}
+	.moji{
+		justify-content: center;
+		text-align: center;
+		margin:20px 0 ;
+		
+	}
+
+	h2:before, h2:after{
+		border: hidden;
+		margin: 0;
+	}
+	
+	.morino{
+		justify-content: center;
+	}
+	
+	.sns{
+		display:block;
+		align-items: center;
+		justify-content:space-around;
+		width:50%;
+		margin:0 auto;
+	}
+	
+	
+	
+	
+	.check{
+	text-align: center;
+	color: #7111e7;
+	font-size: 1.5em;
+	padding-top: 50px;
+	font-weight: bold;
+	background-image: url("img/tape-green.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+		
+		
+	}
+	
+	
+	
+	.space .icon {
+		display:block;
+		
+		
+	
+	}
+	
+	.ohuro{
+			
+
+	
+	
+}
+
+.shizuka{
+		
+}
+
+.gomi{
+	
+	
+}
+
+	.album{
+		
+		justify-content: center;
+		align-items: center;
+	}
+	.cheki{
+	width: 80%;
+	height:auto;
+		justify-content: center;
+}
+	
+	.kitsune{
+	transform: rotate(-9deg);
+	object-fit: contain;
+		margin-top: -20px;
+		justify-content: center;
+	/*z-index: 2;*/
+}
+
+.milky{
+	transform: rotate(5deg);
+	margin-top: -20px;
+	object-fit: contain;
+	justify-content: center;
+	/*z-index: 3;*/
+}
+	
+}
